@@ -35,8 +35,8 @@ public class Estudante {
     @ManyToMany //Muitos para muitos: muitos estudantes têm muitas unidades curriculares
     @JoinTable(
         name = "estudante_unidade_curricular",   //Cria uma tabela intermediária
-        joinColumns = @JoinColumn(name = "estudante_id", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "unidade_curricular_id", referencedColumnName = "id")
+        joinColumns = @JoinColumn(name = "estudante_id", referencedColumnName = "estudante_id"),
+        inverseJoinColumns = @JoinColumn(name = "unidade_curricular_id", referencedColumnName = "unidade_curricular_id")
     )
     private Set<UnidadeCurricular> unidadesCurriculares;          //As UCs estão sendo colocados em uma lista set, ou seja, as UC's não duplicam.
 
@@ -96,7 +96,7 @@ public class Estudante {
     public void setUnidadesCurriculares(Set<UnidadeCurricular> unidadesCurriculares) {
         this.unidadesCurriculares = unidadesCurriculares;
     }
-
+    
     
 
 }
